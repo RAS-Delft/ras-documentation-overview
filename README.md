@@ -12,7 +12,7 @@ For information on the technicalities on the facilities and software, contact fa
 
 ## Facilities & Fleet
 We have various bodies of water, both inside and outside, where we regulary conduct experiments with any of our 18 available model scale ships. 
-The nature of the testing facilities and vessels vary, to cater various research needs. Inside bodies have [visual motion tracking systems](https://optitrack.com/), whereas outside we rely on ship mounted sensors. 
+The nature of the testing facilities and vessels vary, to cater various research needs. Inside bodies have visual motion tracking systems, whereas outside we rely on ship mounted sensors. 
 
 See more detailed descriptions in the [Fleet & Facility overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/facilities.md)
 
