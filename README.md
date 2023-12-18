@@ -17,13 +17,13 @@ The nature of the testing facilities and vessels vary, to cater various research
 See more detailed descriptions in the [fleet & facility overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/facilities.md)
 
 
-* Towing Tank, Faculty lake
+* Towing Tank, Faculty lake with Tito Neri vessel
 <p align="center" width="100%">
     <img width="49%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/56f17134-bb99-4894-884e-6088673ef12a"> 
     <img width="49%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/aacae18e-6090-4b9d-bb26-d9ecd2461315"> 
 </p>
 
-* Flume Tank, Basement tanks
+* Flume Tank with Tito Neri vessel, Basement tank with Delfia vessel
 <p align="center" width="100%">
     <img width="49%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/1d608763-c2a8-4dd7-90b6-39cc9a6998d1"> 
     <img width="49%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/441427fc-8ecc-4fba-8f58-c0ae4f0c4882"> 
