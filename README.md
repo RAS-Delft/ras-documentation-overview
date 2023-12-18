@@ -33,6 +33,7 @@ See more detailed descriptions in the [Fleet & Facility overview](https://github
 Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The modules that are used in the common vessel control stacks within RAS are descirbed in more detail in the [Control Modules overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/controlmodules.md).
 
 This section describes different software components that we have, how they interface with eachother, and where links to their repositories. 
+Our vision is to re-use as much modules as possible when doing experimentals, so we can benefit from previous work and mature existing components. 
 
 <p align="center" width="100%">
     <img width="50%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/8cab54e9-9cba-43a9-b082-1e70f5535b84">
