@@ -14,7 +14,7 @@ For information on the technicalities on the facilities and software, contact fa
 We have various bodies of water, both inside and outside, where we regulary conduct experiments with any of our 18 available model scale ships. 
 The nature of the testing facilities and vessels vary, to cater various research needs. Inside bodies have visual motion tracking systems, whereas outside we rely on ship mounted sensors. 
 
-See more detailed descriptions in the [Fleet & Facility overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/facilities.md)
+See more detailed descriptions in the [fleet & facility overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/facilities.md)
 
 
 * Towing Tank, Faculty lake
@@ -30,7 +30,7 @@ See more detailed descriptions in the [Fleet & Facility overview](https://github
 </p>
 
 ## Control modules
-Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The modules that are used in the common vessel control stacks within RAS are descirbed in more detail in the [Control Modules overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/module_overview.md).
+Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The [control module overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/module_overview.md) describes modules that are used in the common vessel control stacks within RAS.
 
 This section describes different software components that we have, how they interface with eachother, and where links to their repositories. 
 Our vision is to re-use as much modules as possible when doing experimentals, so we can benefit from previous work and mature existing components. 
