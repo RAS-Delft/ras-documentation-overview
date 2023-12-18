@@ -30,18 +30,17 @@ See more detailed descriptions in the [Fleet & Facility overview](https://github
 </p>
 
 ## Control modules
-Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The modules that are used in the common vessel control stacks within RAS are descirbed in more detail in the [Control Modules overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/controlmodules.md). 
+Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The modules that are used in the common vessel control stacks within RAS are descirbed in more detail in the [Control Modules overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/controlmodules.md).
 
-### Overview of available modules
-< What modules are out there>
-### Interfaces
-< What topic, what format>
+This section describes different software components that we have, how they interface with eachother, and where links to their repositories. 
+
+<p align="center" width="100%">
+    <img width="50%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/8cab54e9-9cba-43a9-b082-1e70f5535b84">
+</p>
 
 ## Vessel dynamical models
-< What we know>
-< What versions of models are out there?>
-< How is this obtained>
-< KNOWN limitations>
-< Links to measurements?>
+The [vessel model overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/vesselmodels.md) gives the information what we know about the dynamics of the ships. It is intended to document best known models for particular scenarios, what versions are out there, how the measurements are obtained, known limitations and links to measurement reports. 
 
-![image](https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/bbfb4472-b482-4838-a8bf-dc8f0276c8c7)
+<p align="center" width="100%">
+    <img width="60%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/bbfb4472-b482-4838-a8bf-dc8f0276c8c7">
+</p>
