@@ -1,13 +1,36 @@
 # RAS control modules
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/5917472/225625088-a7cb7d74-f594-4aed-bfc7-555cc0f2d2e4.png" />
+</p>
+
 This section provides a description of the various maritime robotics experiment tools at your disposal. It serves as a starting point for collaborators to familiarize themselves with the available resources.The benefit of using the modules developed by RAS engineers is that these elements have usually been developed up to a reasonable state of reliability, which becomes extra desirable when there are numerous single-points-of-failure. Leveraging well-tested modules allows you to focus more on your goal. Utilizing proven components you can devote more time and effort to pushing your own project goals, while contributing by maturing the software through making small improvements, bug reports or feedback. 
 
 If you intend to develop a control architecture utilizing any of these modules, we highly recommend sparring with the engineers of RAS when you want to start designing a control architecture.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/5917472/225585663-8054c647-83d7-4b90-abb3-9ec3994ab30f.png"/>
+</p>
 
 ## Robotic operating system
 <some notes on how common elements interact>
 
 
 ## Modules
+we offer a variety of repositories that cater to researchers and projects. Our design philosophy centers around creating reusable software components for future projects. To ensure ease of use for upcoming projects, we organize these software components into different topics. Our repositories consist of two main types: basic building blocks and those designed for specific use cases. The distinction between the two ensures clarity and easy identification of the functionalities.
+
+### Basic Building Blocks:
+These are common software modules doing basic operations fundamental for reliable vessel operation. While they may not be of direct interest to regular researchers, they play a crucial role in the smooth functioning of the system. Examples of such modules include:
+- Bridges between sensors and ROS (Robot Operating System)
+- Low level actuator controls
+- VPN services for secure communication
+- Remote control abilities
+- Ship diagnostics for monitoring and maintenance purposes
+
+### Specific Use Case Components:
+Some software components are tailored for specific subjects or applications. These components are bundled together in dedicated packages for easy access and usage. Examples of such packages include:
+- Waypoint following demonstration for path planning and navigation
+- Formation control system 1, which includes heading and distance keeping approaches (ref), ideal for formations of vessels
+- MT44000 Mechatronics course software, catering to the specific needs of the Mechatronics course.
+
 
 ### Utilities 
 | Name                | Description                                                                    |
