@@ -11,11 +11,54 @@ If you intend to develop a control architecture utilizing any of these modules, 
 </p>
 
 ## Robotic operating system
-<some notes on how common elements interact>
-
+Our design philosophy centers around creating reusable software components for future projects, where the [Robotic Operating System](https://www.ros.org/) facilitates this. The main functionality revolves around a modular publisher-subscriber communication structure, although it also supports in deployment, integration of external tools, data collection and makes valuable tools available. Most information flows between modules described below are utilizing ROS inputs and outputs. 
 
 ## Modules
-we offer a variety of repositories that cater to researchers and projects. Our design philosophy centers around creating reusable software components for future projects. To ensure ease of use for upcoming projects, we organize these software components into different topics. Our repositories consist of two main types: basic building blocks and those designed for specific use cases. The distinction between the two ensures clarity and easy identification of the functionalities.
+The organisation repositories offer a variety of repositories that cater to researchers and projects. To ensure ease of use for upcoming projects, we organize these software components into different function groups.
+
+### Vessels, Sensors & Actuators
+| Name                | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| [Tito Neri actuator stack V3](https://github.com/RAS-Delft/RAS_TitoNeri/tree/main/ras_low_level_bridge)  |  Subscribes to reference actuation & executes it, using an ARM Microprocessor with PID feedback control. Publishes telemetry|
+| Delfia actuator stack| Subscribes to reference actuation & executes it, using a microcontroller with PID Feedback. Publishes telemetry. (currently saved local on Delfia (1-3) Raspberry Pi's)|
+| [GNSS ROS bridge ](https://github.com/RAS-Delft/reach_bridge)| Publishes differential gnss output on ROS|
+| [Optitrack ROS bridge](https://github.com/RAS-Delft/ros_optitrack_bridge) | Publishes rigid bodies (e.g. vessel) poses measured on optitrack-equppped inside locations ROS |
+| Pico-Logger | Voltage/current logging utility |
+
+### Visualisation
+| Name                | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| [Ship web diagnostics](https://github.com/RAS-Delft/web-diagnostics) | Webbrowser diagnostics and map state/reference display for robots connected to VPN network |
+| [Rviz2 fleet visualisation](https://github.com/RAS-Delft/ras_urdf_common/blob/main/launch/rviz_bringup.launch.py) | Shows ships in a 3d environment. Requires robot description ('urdf', in same repo) to be streamed for respective vessels. |
+| [Plotjuggler](https://github.com/facontidavide/PlotJuggler) (not a ras repo, yet awesome) | General real time plotting of everything ROS. |
+
+### General control modules
+| Name                | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| [Joystick controller (Matlab Gui) ](https://github.com/RAS-Delft/RAS_General/blob/main/matlab/GUI%20%26%20control%20subsystems/Joystick_app_directJoyControl.mlapp)| Allows joystick control of actuators by a human operator|
+| Control effort allocator 3dof  | Allocates a desired control effort of a delfia with simple constraints.   |
+| Heading controller| Controls heading of a vessel (PID based) |link  |
+| Waypoint following manager | Manages waypoints of a track that a vessel needs to follow. Has a click point user interface to adjust path. Calculates reference heading of a ship and detects if ship needs to snap to a next waypoint. |
+| USV_geopos_heading_differentiator | Estimates ship body fixed velocities through differentiation and filtering |
+| Surge velocity controller | Aims to let ship surge follow a reference (PID based) |
+| Surge-yaw TitoNeri thrust allocator | Allocates desired control effort (Fx, Mzz) over thrusters |
+
+
+
+### Project specific modules
+| Name                | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| Mechatronics  course Simulink Tito Neri Dynamic Positioning | Dynamic positioning system for Tito Neri running on Matlab Simulink. |
+| USV_formation_control_1| Control stack using multiple ships following a fixed speed moving formation reference along a predefined path. Ships employ heading and velocity control to steer towards and remain at desired distance from formation targets|
+
+
+
+
+
+
+
+
+
 
 ### Basic Building Blocks:
 These are common software modules doing basic operations fundamental for reliable vessel operation. While they may not be of direct interest to regular researchers, they play a crucial role in the smooth functioning of the system. Examples of such modules include:
@@ -35,7 +78,7 @@ Some software components are tailored for specific subjects or applications. The
 ### Utilities 
 | Name                | Description                                                                    |
 | ------------------- | ------------------------------------------------------------------------------ |
-| [Joystick controller (Matlab Gui) ](https://github.com/RAS-Delft/RAS_General/blob/main/matlab/GUI%20%26%20control%20subsystems/Joystick_app_directJoyControl.mlapp)| Allows joystick control of actuators by a human operator|
+
 | ras_tf_lib          | Various python functions packed in a ros library that is used in other modules |
 | Nausbot             | Turtlebot but as a ship: lightweight real time ship simulator on a ros node    |
 
@@ -43,25 +86,16 @@ Some software components are tailored for specific subjects or applications. The
 ### Control modules
 | Name                | Description                                                                    | Link              |
 | ---------------- | --------------------- | ------------------------------ |
-| Control effort allocator 3dof  | Allocates a desired control effort of a delfia with simple constraints.   |link  |
+link  |
 | DP + vessel assembly + formation_adaptive_control  | Vessel dynamic positioning, assembling and adjusting their 1)control effort generation and 2) allocation.  | |
-| Heading controller| Controls heading of a vessel (PID based) |link  |
-| Waypoint following manager | Manages waypoints of a track that a vessel needs to follow. Has a click point user interface to adjust path. Calculates reference heading of a ship and detects if ship needs to snap to a next waypoint. |link  |
-| USV_geopos_heading_differentiator | Estimates ship body fixed velocities through differentiation and filtering |link  |
-| Surge velocity controller | Aims to let ship surge follow a reference (PID based) |link  |
-| Surge-yaw TitoNeri thrust allocator | Allocates desired control effort (Fx, Mzz) over thrusters |link  |
-| USV_formation_control_1/formation_configuration_broadcaster | simple periodic fixed predefined formation state broadcaster |link  |
-| USV_formation_control_1/formation_state_estimator | Estimates state of a formation given ship positions and known desired formation shape |link  |
-| USV_formation_control_1/trajectory_planner | Takes a predefined path. Smoothes. Adds a time/velocity profile. Moves a formation origin along profile in real time. |link  |
-| USV_formation_control_1/vessel_reference_generator | Generates reference heading and velocity to let a ship follow formation reference at set distance |link  |
-| Mechatronics  course Simulink Tito Neri Dynamic Positioning | Dynamic positioning system for Tito Neri running on Matlab Simulink. | link|
+
 
 ### Backend systems
 | Name                | Description                                                                    | Link              |
 | ---------------- | --------------------- | ------------------------------ |
 | Ros optitrack bridge | Takes optitrack body pose and streams it on ros |  |
 | Web-Diagnostics | Python server and Vue.js webapp code that form the web diagnostics panel. |  |
-| Pico-Logger | Voltage/current logging utility |  |
+
 | Server-Docker-Stack | Stack that runs VPN server services |  |
 | boat-daemon | Sends vessel diagnostics to Web-Diagnostics |  |
 | reach-bridge | Connects the emlid reach to stream vessel position on ROS |  |
