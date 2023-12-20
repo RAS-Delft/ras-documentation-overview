@@ -30,7 +30,7 @@ See more detailed descriptions in the [fleet & facility overview](https://github
 </p>
 
 ## Control modules
-Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The [control module overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/module_overview.md) describes modules that are used in the common vessel control stacks within RAS.
+Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The [control module overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/module_overview.md) describes modules that are used in the common vessel control stacks within RAS. Most components are developed to work with/on the [Robotic Operating System](https://www.ros.org/). 
 
 This section describes different software components that we have, how they interface with eachother, and where links to their repositories. 
 Our vision is to re-use as much modules as possible when doing experimentals, so we can benefit from previous work and mature existing components. 
