@@ -23,13 +23,13 @@ The organisation repositories offer a variety of repositories that cater to rese
 | Delfia actuator stack| Subscribes to reference actuation & executes it, using a microcontroller with PID Feedback. Publishes telemetry. (currently saved local on Delfia (1-3) Raspberry Pi's)|
 | [GNSS ROS bridge ](https://github.com/RAS-Delft/reach_bridge)| Publishes differential gnss output on ROS|
 | [Optitrack ROS bridge](https://github.com/RAS-Delft/ros_optitrack_bridge) | Publishes rigid bodies (e.g. vessel) poses measured on optitrack-equppped inside locations ROS |
-| Pico-Logger | Voltage/current logging utility |
+| Pico-Logger | Voltage/current logging utility (in development) |
 
 ### Visualisation
 | Name                | Description                                                                    |
 | ------------------- | ------------------------------------------------------------------------------ |
 | [Ship web diagnostics](https://github.com/RAS-Delft/web-diagnostics) | Webbrowser diagnostics and map state/reference display for robots connected to VPN network |
-| [Rviz2 fleet visualisation](https://github.com/RAS-Delft/ras_urdf_common/blob/main/launch/rviz_bringup.launch.py) | Shows ships in a 3d environment. Requires robot description ('urdf', in same repo) to be streamed for respective vessels. |
+| [Rviz2 fleet visualisation](https://github.com/RAS-Delft/ras_urdf_common/blob/main/launch/rviz_bringup.launch.py) | Shows ships in a 3d environment using Rviz2. Requires robot description ('urdf' file in same repo) to be streamed for respective vessels. |
 | [Plotjuggler](https://github.com/facontidavide/PlotJuggler) (not a ras repo, yet awesome) | General real time plotting of everything ROS. |
 
 ### General control modules
