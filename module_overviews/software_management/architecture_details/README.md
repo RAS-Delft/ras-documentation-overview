@@ -5,6 +5,14 @@ Commonly a drone has the following devices upon which we deploy software:
 - 1 main microcontroller that interacts with actuator and analog sensors.  (e.g. Arduino, ESP, ...)
 - 1 linux based pc with more conputational power, albeit not designed to directly interact with analog systems. (e.g. NUC, Raspberry-Pi ...) 
 
+
+This image sketches the 2024 vision on structuring drone subsystems
+<br>
+
+![ras_system_architecture_workspace drawio](https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/eadc34ec-44f6-4790-a78f-63b8fbfa0c5d)
+
+
+
 ## Drone Computational hub
 This device is the computer on board of the vessel has the main task of linking ROS with actuators/sensors. Additionally it provides diagnostics and can execute automated computation locally if desired. 
 
