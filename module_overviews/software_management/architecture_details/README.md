@@ -35,3 +35,7 @@ Components should be swapped out if reasonable, taking into account complexity, 
 - Containerize elements (commonly with Docker) for flexible deployment
 - Version control with Git
 - Document
+
+## Common utilities:
+- [OvenMediaEngine](https://github.com/AirenSoft/OvenMediaEngine) container for streaming video
+- [Traefic](https://hub.docker.com/_/traefik) for remote deployment of services 
