@@ -154,6 +154,21 @@ Updated namespaces (we will migrate tho this throughout 2023)
 | /vesselID/reference/velocity | desired velocities of CO in body fixed coordinate system | geometry_msgs/Twist | m/s (linear), rad/s (angular) |
 
 #### Details on particular topics
+
+
+
+For the Tito Neri the actuation message of JointState is characterized by a variable amount of actuator_name and value fields. The order of the joints does not matter, as long as the name array is ordered similar to the values. The values are then looked up by name. Thrust angles are communicated on the Position field. aft and propeller velocities on the Velocity field. Other data (e.g.  can be ignored or set to NaN. 
+
+| Joint name                           | Joint name                 | Unit               | Data stored in field | Characteristic values |
+|--------------------------------------|----------------------------|--------------------|----------------------|-----------------------|
+| Aft portside propeller velocity      | SB_aft_thruster_propeller  | rounds per minute  | Velocity             | -2400:2400 |
+| Aft starboardside propeller velocity | PS_aft_thruster_propeller  | rounds per minute  | Velocity             | -2400:2400 |
+| Bow thruster velocity                | BOW_thruster_propeller     | Normalized         | Velocity             | -1:1 |
+| Aft portside azimuth angle           | SB_aft_thruster_joint      | Radians            | Position             | -0.75pi:0.75pi        |
+| Aft portside azimuth angle           | PS_aft_thruster_joint      | Radians            | Position             | -0.75pi:0.75pi        |  
+
+<br>
+
 Delfia-1* actuation array is as follows:
 | Index | Content                  | Unit    |
 |-------|--------------------------|---------|
@@ -161,18 +176,7 @@ Delfia-1* actuation array is as follows:
 | 1     | Front propeller velocity | RPS     |
 | 2     | Angle rear azimuth       | Radians |
 | 3     | Angle front azimuth      | Radians |
-<br>
 
-
-For the Tito Neri the actuation array is defined as 
-
-| Index | Content                              | Unit                             |
-|-------|--------------------------------------|----------------------------------|
-| 0     | Aft portside propeller velocity      | RPM                              |
-| 1     | Aft starboardside propeller velocity | RPM                              |
-| 2     | Bow thruster velocity                | Normalized between -1.0 and +1.0 |
-| 3     | Aft portside azimuth angle           | Radians                          |
-| 4     | Aft portside azimuth angle           | Radians                          |
 
 <br>
 For the Tito Neri the telemetry array is defined as:
