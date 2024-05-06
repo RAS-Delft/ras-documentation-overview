@@ -125,18 +125,6 @@ The table below shows identifiers are used for our vessels. These names are comm
 ### ROS topics & message formats
 To have modules easily swappable and connectable, the following default messagetypes and namespacing are suggested. 'vesselID' refers to the Identifier of a particular vessel as described in the [previous section](#namespaces).
 
-Old namespace convention: (pre 2023)
-| Topicname                                  | Description             | Messagetype        | Default unit(s)                                        |
-|-------------------------------------------|-------------------------|--------------------|--------------------------------------------------------|
-| /vesselID/u_ref  | Reference/desired Actuator state  | std_msgs/Float32MultiArray* | (see [below](#details-on-particular-topics) )   |
-| /vesselID/u_est | Measured actuator state | std_msgs/Float32MultiArray  | identical to /vesselID/u_ref |
-| OptiRAS/vesselID | Estimated pose          | std_msgs/pose       | meters,quaternions   |
-| /vesselID/geopos_est | Estimated/measured global position | sensor_msgs/NavSatFix      | degrees (latitude, longitude), meters (altitude)   |
-| /vesselID/heading_est | Estimated/measured yaw | std_msgs/Float32 | radians (clockwise from above w.r.t. north) |
-| /vesselID/heading_ref | Reference/desired yaw | std_msgs/Float32 | radians (clockwise from above w.r.t. north) |
-| /vesselID/telemetry  | microcontroller state / telemetry  | std_msgs/Float32MultiArray* | various (see [below](#details-on-particular-topics) )  |
-
-Updated namespaces (we will migrate tho this throughout 2023)
 | Topicname                                 | Description             | Messagetype        | Default unit(s)                                        |
 |-------------------------------------------|-------------------------|--------------------|--------------------------------------------------------|
 | /vesselID/state/actuation | Measured actuator state | std_msgs/Float32MultiArray  | (see [below](#details-on-particular-topics) |
@@ -154,9 +142,6 @@ Updated namespaces (we will migrate tho this throughout 2023)
 | /vesselID/reference/velocity | desired velocities of CO in body fixed coordinate system | geometry_msgs/Twist | m/s (linear), rad/s (angular) |
 
 #### Details on particular topics
-
-
-
 For the Tito Neri the actuation message of JointState is characterized by a variable amount of actuator_name and value fields. The order of the joints does not matter, as long as the name array is ordered similar to the values. The values are then looked up by name. Thrust angles are communicated on the Position field. aft and propeller velocities on the Velocity field. Other data (e.g.  can be ignored or set to NaN. 
 
 | Joint name                           | Joint name                 | Unit               | Data stored in field | Characteristic values |
@@ -179,7 +164,7 @@ Delfia-1* actuation array is as follows:
 
 
 <br>
-For the Tito Neri the telemetry array is defined as:
+For the Tito Neri the telemetry array is defined as: (scheduled to be updated in 2024)
 
 | Index | Content                   | Unit                                 |
 |-------|---------------------------|--------------------------------------|
