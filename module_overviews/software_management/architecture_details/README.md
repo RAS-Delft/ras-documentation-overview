@@ -31,6 +31,11 @@ This device is the computer on board of the vessel has the main task of linking 
 - (optional) Enable login by hostname by `sudo nano /etc/systemd/resolved.conf` and setting `MulticastDNS=yes`
 - (optional) Set access keys between device and your pc for easy access: `ssh-copy-id ras@192.168.1.3`
 
+- snap install docker
+- sudo groupadd docker
+- sudo apt install net-tools
+
+
 ### Benchmark module setup
 All major components are stored in the ras homefolder (`/home/ras`).
 - Add the configuration file for this drone, where we set the major settings for this device.
@@ -40,10 +45,23 @@ All major components are stored in the ras homefolder (`/home/ras`).
 export VESSEL_ID="RAS_TN_DB"
 export RAS_GH_USERNAME="ras-delft-user"
 export RAS_GH_KEY="<FILL IN ras-delft-user pull/write GITHUB KEY>"
+export RMW_IMPLEMENTATION="rmw_fastrtps_cpp"
 ```
     - Make sure this gets called upon bash startup by adding it to .bashrc with `nano` or `echo "source /home/ras/ras_entrypoint.sh" >> ~/.bashrc`
 - Get the repository with main dockerfiles
     - `git clone https://${RAS_GH_USERNAME}:${RAS_GH_KEY}@github.com/RAS-Delft/ras_ros_low_level_systems`
+    - Update submodules (again fill in `$RAS_GH_USERNAME` and `$RAS_GH_KEY` if queried) `cd ras_ros_low_level_systems; git submodule update --init --recursive`
+
+- Build and run the docker containers
+from /ras_ros_low_level_systems:
+```shell
+docker compose build
+```
+```shell
+docker compose up
+```
+
+
 
 ## Microcontroller
 This device is responsible for executing desired actuation. 
