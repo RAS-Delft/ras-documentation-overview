@@ -49,10 +49,5 @@ The [vessel model overview](https://github.com/RAS-Delft/ras-documentation-overv
 
 
 
-# Further steps for installation
-- snap install docker
-- sudo groupadd docker
-- git submodule update --init --recursive
- ( fill in `$RAS_GH_USERNAME` and `$RAS_GH_KEY`)
- - sudo apt install net-tools
+
  
